@@ -8,7 +8,7 @@ public class RunnerAI : MonoBehaviour
 {
 
 	public NavMeshAgent agent;
-	public LayerMask whatIsPotato,whatIsGround;
+	public LayerMask whatIsPlayer, whatIsGround, whatIsBean;
 
 	//Patrolling 
 	public Vector3 walkPoint;
@@ -18,34 +18,37 @@ public class RunnerAI : MonoBehaviour
 
 	//States
 	public float sightRange, RunAwayRange;
-	public bool CanSeePotatoInRange, CanRunAwayInRange;
+	public bool CanSeePlayerInRange, CanRunAwayInRange;
 
 	//Running Away
-	public GameObject PotatoMan;
+	public GameObject Player;
+	public CharacterController controller;
 
+
+	//RNG
+	public float RandomZ = 50;
+	public float RandomX = 50;
 	// Start is called before the first frame update
 	void Start()
-    {
+	{
 		agent = GetComponent<NavMeshAgent>();
-		PotatoMan = GameObject.Find("Potato Man");
-    }
+		Player = GameObject.Find("Player");
+	}
 
 	// Update is called once per frame
 	void Update()
 	{
 
-		CanSeePotatoInRange = Physics.CheckSphere(transform.position, sightRange, whatIsPotato);
-		CanRunAwayInRange = Physics.CheckSphere(transform.position, RunAwayRange, whatIsPotato);
+		CanRunAwayInRange = Physics.CheckSphere(transform.position, RunAwayRange, whatIsPlayer);
 
 
-		if (!CanSeePotatoInRange && !CanRunAwayInRange)
-		{
+
 			Patroling();
-		}
-		if (CanSeePotatoInRange && CanRunAwayInRange)
+
+		if (CanRunAwayInRange || CanSeePlayerInRange)
 		{
 			RunAway();
-		}
+		} 
 	}
 
 	private void Patroling()
@@ -84,8 +87,12 @@ public class RunnerAI : MonoBehaviour
 		}
 	}
 
+
 	private void RunAway()
 	{
-		agent.SetDestination(new Vector3(PotatoMan.transform.position.z - transform.position.z, transform.position.y, PotatoMan.transform.position.x - transform.position.x));
+		Vector3 dirToClosestRunner = transform.position - Player.transform.position;
+		Vector3 NewRunnerWalkPoint = transform.position + dirToClosestRunner;
+		agent.SetDestination(NewRunnerWalkPoint);
 	}
+
 }

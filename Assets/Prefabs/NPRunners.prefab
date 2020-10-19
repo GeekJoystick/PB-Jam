@@ -11,9 +11,12 @@ GameObject:
   - component: {fileID: 5138247610343100745}
   - component: {fileID: 5138247610343100744}
   - component: {fileID: 5138247610343100747}
-  m_Layer: 0
+  - component: {fileID: -3315640311090174387}
+  - component: {fileID: -2013996243471444602}
+  - component: {fileID: 7468474330306460309}
+  m_Layer: 11
   m_Name: NPRunners
-  m_TagString: Untagged
+  m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,19 +71,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 5138247610343100744}
-  whatIsPotato:
+  whatIsPlayer:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 512
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
+  whatIsBean:
+    serializedVersion: 2
+    m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 50
+  sightRange: 20
   RunAwayRange: 12
   CanSeePotatoInRange: 0
   CanRunAwayInRange: 0
-  PotatoMan: {fileID: 0}
+  CanFleeInRange: 0
+  Player: {fileID: 0}
+  controller: {fileID: 0}
+  RandomZ: 0
+  RandomX: 0
+--- !u!136 &-3315640311090174387
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138247610343100746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!143 &-2013996243471444602
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138247610343100746}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7468474330306460309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138247610343100746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e93a521181d51c49a9fc54eadc28fd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5138247610787648577
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +147,7 @@ GameObject:
   - component: {fileID: 5138247610787648589}
   - component: {fileID: 5138247610787648588}
   - component: {fileID: 5138247610787648591}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

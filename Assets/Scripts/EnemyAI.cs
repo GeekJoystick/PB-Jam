@@ -16,9 +16,7 @@ public class EnemyAI : MonoBehaviour
 
 	public GameObject Potato;
 
-	public bool isPlayer, IsNPRunner;
-
-	public LayerMask whatIsPlayer, whatIsGround, whatIsNPRunner;
+	public LayerMask whatIsPlayer, whatIsGround;
 	//Patrolling 
 	public Vector3 walkPoint;
 	bool walkPointSet;
@@ -30,24 +28,17 @@ public class EnemyAI : MonoBehaviour
 
 	//States
 	public float sightRange, attackRange;
-	public bool CanSeePlayerInRange, CanAttackPlayerInRange, CanSeeNPRunnerInRange, CanAttackNPRunnerInRange;
-
-
-
-
+	public bool CanSeePlayerInRange, CanAttackPlayerInRange;
 	// Start is called before the first frame update
 	void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		Player = GameObject.Find("Player").transform;
-		
 	}
 
 	void Update()
 	{
 		//Checks if the player is in sight and attack range
-		CanSeeNPRunnerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsNPRunner);
-		CanAttackNPRunnerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsNPRunner);
 		CanSeePlayerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 		CanAttackPlayerInRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -58,28 +49,10 @@ public class EnemyAI : MonoBehaviour
 		if (CanSeePlayerInRange)
 		{
 			ChasePlayer();
-			isPlayer = true;
-			IsNPRunner = false;
 		}
 		if (CanSeePlayerInRange && CanAttackPlayerInRange)
 		{
 			AttackPlayer();
-			isPlayer = true;
-			IsNPRunner = false;
-		}
-
-		if (CanSeeNPRunnerInRange)
-		{
-			ChasePlayer();
-			isPlayer = false;
-			IsNPRunner = true;
-		}
-
-		if (CanSeeNPRunnerInRange && CanAttackNPRunnerInRange)
-		{
-			AttackPlayer();
-			isPlayer = false;
-			IsNPRunner = true;
 		}
 	}
 
@@ -121,58 +94,15 @@ public class EnemyAI : MonoBehaviour
 
 	private void ChasePlayer()
 	{
-	//CheckForClosestEnemy 
-	float distanceClosestRunner = Mathf.Infinity;
-	RunnerAI closestRunner;
-	RunnerAI[] NPRunners = GameObject.FindObjectsOfType<RunnerAI>();
-		if (IsNPRunner)
-		{
-			foreach (RunnerAI currentRunner in NPRunners)
-			{
-				float distanceToRunner = (this.transform.position - currentRunner.transform.position).sqrMagnitude;
-				if (distanceToRunner < distanceClosestRunner)
-				{
-					distanceClosestRunner = distanceToRunner;
-					closestRunner = currentRunner;
-					agent.SetDestination(closestRunner.transform.position);
-				}
-			}
-		
-		}
-
-		if (isPlayer)
-		{
-			//makes the potato go to the player
-			agent.SetDestination(Player.transform.position);
-		}
-
-		
+		//makes the potato go to the player 
+		agent.SetDestination(Player.transform.position);
 	}
 
 	private void AttackPlayer()
 	{
-		//CheckForClosestEnemy 
-		float distanceClosestRunner = Mathf.Infinity;
-		RunnerAI closestRunner;
-		RunnerAI[] NPRunners = GameObject.FindObjectsOfType<RunnerAI>();
-		if (IsNPRunner)
-		{
-			foreach (RunnerAI currentRunner in NPRunners)
-			{
-				float distanceToRunner = (this.transform.position - currentRunner.transform.position).sqrMagnitude;
-				if (distanceToRunner < distanceClosestRunner)
-				{
-					distanceClosestRunner = distanceToRunner;
-					closestRunner = currentRunner;
-					transform.LookAt(closestRunner.transform);
-				}
-			}
-		}
-		if (isPlayer)
-		{
-			//looks at the player
-			transform.LookAt(Player);
-		}
+		//looks at the player
+		transform.LookAt(Player);
+
 		if (!hasAttacked)
 		{
 			//Shoot bean man :o

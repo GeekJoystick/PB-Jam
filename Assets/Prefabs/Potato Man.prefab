@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 3623486215219598571}
   - component: {fileID: 3623486215219598570}
   - component: {fileID: 3623486215219598581}
+  - component: {fileID: -5423303319489316762}
   m_Layer: 10
   m_Name: Potato Man
-  m_TagString: Untagged
+  m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,8 +84,8 @@ MonoBehaviour:
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   AttackInterval: 2
-  sightRange: 50
-  attackRange: 12
+  sightRange: 60
+  attackRange: 35
   CanSeePlayerInRange: 0
   CanAttackPlayerInRange: 0
 --- !u!143 &3623486215219598581
@@ -104,6 +105,20 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &-5423303319489316762
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623486215219598569}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3623486215555653414
 GameObject:
