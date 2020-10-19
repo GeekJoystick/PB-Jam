@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
     
-    public float speed = 12f;
+    public int maxAmmo;
+    public float speed = 18f;
     public float gravity = -20f;
     public float jumpHeight = 2f;
     public float jumpBufferDelay = 0.2f;
@@ -17,36 +18,20 @@ public class PlayerMovement : MonoBehaviour
     public GameObject potato;
     public LayerMask groundMask;
 
-    bool potatoed;
     Vector3 velocity;
     bool isGrounded;
     float currSpeed;
     float currJumpHeight;
     float jumpBuffer = 0f;
-    GameObject currPotato;
+    int ammo;
     float ammoReload;
 
     // Start is called before the first frame update
     void Start()
     {
+        ammo = maxAmmo;
         currSpeed = speed;
         currJumpHeight = jumpHeight;
-    }
-
-    // Function called upon potatification
-    void PotateOn(){
-        potatoed = true;
-        currSpeed = speed*1.5f;
-        currJumpHeight = jumpHeight*1.5f;
-        transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-        controller.Move(new Vector3(0, 2f, 0));
-    }
-
-    void PotateOff(){
-        potatoed = false;
-        currSpeed = speed;
-        currJumpHeight = jumpHeight;
-        transform.localScale = new Vector3(1f, 1f, 1f);
     }
 
     // Update is called once per frame
@@ -75,36 +60,26 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = currJumpHeight;
         }
 
-        if (Input.GetKeyDown("f")){
-            if (potatoed)
-                PotateOff();
-            else
-                PotateOn();
-        }
-
         velocity.y += gravity*Time.deltaTime;
 
         controller.Move(velocity*Time.deltaTime);
-
-        if (potatoed){
-            ammoReload -= Time.deltaTime;
-            if (ammoReload <= 0f){
-                if (currPotato){
-                    Destroy(currPotato);
-                }
-                if (Input.GetAxisRaw("Fire1") != 0){
-                    currPotato = Instantiate(potato, shootPos.position, GetComponent<MouseLook>().camera.transform.rotation);
-                    currPotato.GetComponent<Rigidbody>().AddForce(currPotato.transform.forward*1000f);
-                    ammoReload = ammoReloadDelay;
-                }
+        
+        ammoReload -= Time.deltaTime;
+        if (ammoReload <= 0f && ammo > 0){
+            if (Input.GetButtonDown("Fire1")){
+                GameObject currPotato = Instantiate(potato, shootPos.position, GetComponent<MouseLook>().camera.transform.rotation);
+                currPotato.GetComponent<Rigidbody>().AddForce(currPotato.transform.forward*1000f);
+                ammoReload = ammoReloadDelay;
+                ammo--;
             }
         }
-    }
 
-    void OnCollisionEnter(Collision col){
-        if (col.gameObject.tag == "Potato"){
-            if(!potatoed){
-                PotateOn();
+        Collider[] hitColliders = Physics.OverlapSphere(groundCheck.position, .5f);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.gameObject.tag == "Potato"){
+                Destroy(hitCollider.gameObject);
+                ammo++;
             }
         }
     }
