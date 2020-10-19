@@ -76,7 +76,7 @@ MonoBehaviour:
     m_Bits: 256
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 20
+  sightRange: 50
   RunAwayRange: 12
   CanSeePotatoInRange: 0
   CanRunAwayInRange: 0
