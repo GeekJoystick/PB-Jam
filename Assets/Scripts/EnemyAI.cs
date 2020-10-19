@@ -16,7 +16,9 @@ public class EnemyAI : MonoBehaviour
 
 	public GameObject Potato;
 
-	public LayerMask whatIsPlayer, whatIsGround;
+	public bool isPlayer, IsNPRunner;
+
+	public LayerMask whatIsPlayer, whatIsGround, whatIsNPRunner;
 	//Patrolling 
 	public Vector3 walkPoint;
 	bool walkPointSet;
@@ -28,17 +30,24 @@ public class EnemyAI : MonoBehaviour
 
 	//States
 	public float sightRange, attackRange;
-	public bool CanSeePlayerInRange, CanAttackPlayerInRange;
+	public bool CanSeePlayerInRange, CanAttackPlayerInRange, CanSeeNPRunnerInRange, CanAttackNPRunnerInRange;
+
+
+
+
 	// Start is called before the first frame update
 	void Start()
 	{
 		agent = GetComponent<NavMeshAgent>();
 		Player = GameObject.Find("Player").transform;
+		
 	}
 
 	void Update()
 	{
 		//Checks if the player is in sight and attack range
+		CanSeeNPRunnerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsNPRunner);
+		CanAttackNPRunnerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsNPRunner);
 		CanSeePlayerInRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
 		CanAttackPlayerInRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
@@ -49,10 +58,28 @@ public class EnemyAI : MonoBehaviour
 		if (CanSeePlayerInRange)
 		{
 			ChasePlayer();
+			isPlayer = true;
+			IsNPRunner = false;
 		}
 		if (CanSeePlayerInRange && CanAttackPlayerInRange)
 		{
 			AttackPlayer();
+			isPlayer = true;
+			IsNPRunner = false;
+		}
+
+		if (CanSeeNPRunnerInRange)
+		{
+			ChasePlayer();
+			isPlayer = false;
+			IsNPRunner = true;
+		}
+
+		if (CanSeeNPRunnerInRange && CanAttackNPRunnerInRange)
+		{
+			AttackPlayer();
+			isPlayer = false;
+			IsNPRunner = true;
 		}
 	}
 
@@ -94,21 +121,64 @@ public class EnemyAI : MonoBehaviour
 
 	private void ChasePlayer()
 	{
-		//makes the potato go to the player 
-		agent.SetDestination(Player.transform.position);
+	//CheckForClosestEnemy 
+	float distanceClosestRunner = Mathf.Infinity;
+	RunnerAI closestRunner;
+	RunnerAI[] NPRunners = GameObject.FindObjectsOfType<RunnerAI>();
+		if (IsNPRunner)
+		{
+			foreach (RunnerAI currentRunner in NPRunners)
+			{
+				float distanceToRunner = (this.transform.position - currentRunner.transform.position).sqrMagnitude;
+				if (distanceToRunner < distanceClosestRunner)
+				{
+					distanceClosestRunner = distanceToRunner;
+					closestRunner = currentRunner;
+					agent.SetDestination(closestRunner.transform.position);
+				}
+			}
+		
+		}
+
+		if (isPlayer)
+		{
+			//makes the potato go to the player
+			agent.SetDestination(Player.transform.position);
+		}
+
+		
 	}
 
 	private void AttackPlayer()
 	{
-		//looks at the player
-		transform.LookAt(Player);
-
+		//CheckForClosestEnemy 
+		float distanceClosestRunner = Mathf.Infinity;
+		RunnerAI closestRunner;
+		RunnerAI[] NPRunners = GameObject.FindObjectsOfType<RunnerAI>();
+		if (IsNPRunner)
+		{
+			foreach (RunnerAI currentRunner in NPRunners)
+			{
+				float distanceToRunner = (this.transform.position - currentRunner.transform.position).sqrMagnitude;
+				if (distanceToRunner < distanceClosestRunner)
+				{
+					distanceClosestRunner = distanceToRunner;
+					closestRunner = currentRunner;
+					transform.LookAt(closestRunner.transform);
+				}
+			}
+		}
+		if (isPlayer)
+		{
+			//looks at the player
+			transform.LookAt(Player);
+		}
 		if (!hasAttacked)
 		{
 			//Shoot bean man :o
 			Rigidbody rb = Instantiate(Potato, PotatoShooter.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
 			rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
-			rb.AddForce(transform.up * 32f, ForceMode.Impulse);
+			rb.AddForce(transform.up * 2f, ForceMode.Impulse);
 
 			//Makes the potato shoot again - potatoessss
 			hasAttacked = true;
