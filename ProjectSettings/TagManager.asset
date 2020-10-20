@@ -7,6 +7,8 @@ TagManager:
   - Potato
   - Bean
   - Ground
+  - Ammo
+  - Peanut
   layers:
   - Default
   - TransparentFX

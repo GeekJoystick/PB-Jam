@@ -77,9 +77,11 @@ public class PlayerMovement : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(groundCheck.position, .5f);
         foreach (var hitCollider in hitColliders)
         {
-            if (hitCollider.gameObject.tag == "Potato"){
-                Destroy(hitCollider.gameObject);
-                ammo++;
+            if (hitCollider.gameObject.tag == "Ammo"){
+                if (ammo < maxAmmo){
+                    Destroy(hitCollider.gameObject);
+                    ammo = maxAmmo;
+                }
             }
         }
     }
