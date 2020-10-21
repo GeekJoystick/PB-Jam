@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6238417897474666487}
   - component: {fileID: 7161835718636100668}
   - component: {fileID: 6974513860193661743}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Lil' Peanut
   m_TagString: Bean
   m_Icon: {fileID: 0}
@@ -77,9 +77,6 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  whatIsBean:
-    serializedVersion: 2
-    m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
   sightRange: 20
@@ -87,9 +84,6 @@ MonoBehaviour:
   CanSeePlayerInRange: 0
   CanRunAwayInRange: 0
   Player: {fileID: 0}
-  controller: {fileID: 0}
-  RandomZ: 0
-  RandomX: 0
 --- !u!136 &6238417897474666487
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -145,7 +139,7 @@ GameObject:
   - component: {fileID: 4621135531484700148}
   - component: {fileID: 4621135531484700151}
   - component: {fileID: 4621135531484700150}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -4,15 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Ground
   - Potato
   - Bean
-  - Ground
-<<<<<<< HEAD
   - WaterMelon ExplosiveArea
-=======
-  - Ammo
   - Peanut
->>>>>>> main
+  - Ammo
   layers:
   - Default
   - TransparentFX
@@ -24,8 +21,8 @@ TagManager:
   - 
   - Ground
   - Player
-  - PotatoMan
-  - Beans
+  - Bean
+  - 
   - 
   - 
   - 

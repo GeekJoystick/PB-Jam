@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1035149500029986273}
   - component: {fileID: 1035149500029986272}
   - component: {fileID: 1035149500029986275}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 1796747900241024993}
   - component: {fileID: 3251589106066744362}
   - component: {fileID: 3366009521074899769}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: BigPeanut
   m_TagString: Peanut
   m_Icon: {fileID: 0}
