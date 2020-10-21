@@ -7,7 +7,12 @@ TagManager:
   - Potato
   - Bean
   - Ground
+<<<<<<< HEAD
   - WaterMelon ExplosiveArea
+=======
+  - Ammo
+  - Peanut
+>>>>>>> main
   layers:
   - Default
   - TransparentFX

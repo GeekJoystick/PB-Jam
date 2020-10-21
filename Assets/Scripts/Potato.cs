@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class Potato : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
 	private void OnCollisionEnter(Collision collision)
 	{
@@ -22,11 +11,28 @@ public class Potato : MonoBehaviour
 		{
 			Invoke(nameof(DestroyThis), 5f);
 		}
-		if (collision.gameObject.tag == "Bean")
+		else if (collision.gameObject.tag == "Bean")
 		{
-			Invoke(nameof(DestroyThis), 5f);
+			BeanManager spawner = GameObject.Find("Bean Spawner").GetComponent<BeanManager>();
+			spawner.time += spawner.timePerBean;
+			if (spawner.time > spawner.maxTime){
+				spawner.time = spawner.maxTime;
+			}
+			Destroy(gameObject);
 			Destroy(collision.gameObject);
-
+		}
+		else if (collision.gameObject.tag == "Peanut")
+		{
+			GameObject peanut = collision.gameObject.GetComponent<PeanutAI>().peanut;
+			BeanManager spawner = GameObject.Find("Bean Spawner").GetComponent<BeanManager>();
+			spawner.time += spawner.timePerBean;
+			if (spawner.time > spawner.maxTime){
+				spawner.time = spawner.maxTime;
+			}
+			spawner.AddObject(Instantiate(peanut, collision.gameObject.transform.position, collision.gameObject.transform.localRotation));
+			spawner.AddObject(Instantiate(peanut, collision.gameObject.transform.position, collision.gameObject.transform.localRotation));
+			Destroy(gameObject);
+			Destroy(collision.gameObject);
 		}
 	}
 
