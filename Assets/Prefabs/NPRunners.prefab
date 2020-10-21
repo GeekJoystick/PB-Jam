@@ -77,20 +77,13 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  whatIsBean:
-    serializedVersion: 2
-    m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  sightRange: 20
-  RunAwayRange: 12
-  CanSeePotatoInRange: 0
+  sightRange: 60
+  RunAwayRange: 35
+  CanSeePlayerInRange: 0
   CanRunAwayInRange: 0
-  CanFleeInRange: 0
   Player: {fileID: 0}
-  controller: {fileID: 0}
-  RandomZ: 0
-  RandomX: 0
 --- !u!136 &-3315640311090174387
 CapsuleCollider:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ TagManager:
   - Potato
   - Bean
   - Ground
+  - WaterMelon ExplosiveArea
   layers:
   - Default
   - TransparentFX

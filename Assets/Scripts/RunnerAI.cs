@@ -6,28 +6,26 @@ using UnityEngine.AI;
 
 public class RunnerAI : MonoBehaviour
 {
-
+	[Header("AI and Detection Variables")]
 	public NavMeshAgent agent;
-	public LayerMask whatIsPlayer, whatIsGround, whatIsBean;
+	public LayerMask whatIsPlayer, whatIsGround;
 
+	[Header("Patrolling Variables")]
 	//Patrolling 
 	public Vector3 walkPoint;
 	bool walkPointSet;
 	public float walkPointRange;
 
-
+	[Header("AI States Variables")]
 	//States
 	public float sightRange, RunAwayRange;
 	public bool CanSeePlayerInRange, CanRunAwayInRange;
 
+	[Header("Running Away Variables")]
 	//Running Away
 	public GameObject Player;
-	public CharacterController controller;
 
 
-	//RNG
-	public float RandomZ = 50;
-	public float RandomX = 50;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -42,8 +40,10 @@ public class RunnerAI : MonoBehaviour
 		CanRunAwayInRange = Physics.CheckSphere(transform.position, RunAwayRange, whatIsPlayer);
 
 
-
+		if (!CanRunAwayInRange)
+		{
 			Patroling();
+		}
 
 		if (CanRunAwayInRange || CanSeePlayerInRange)
 		{

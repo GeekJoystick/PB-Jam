@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
 
+	[Header("AI Detection Variables")]
 	public NavMeshAgent agent;
 
 	public Transform Player;
@@ -17,15 +18,19 @@ public class EnemyAI : MonoBehaviour
 	public GameObject Potato;
 
 	public LayerMask whatIsPlayer, whatIsGround;
+
+	[Header("Patrolling Variables")]
 	//Patrolling 
 	public Vector3 walkPoint;
 	bool walkPointSet;
 	public float walkPointRange;
 
+	[Header("Attacking Variables")]
 	//Attacking
 	public float AttackInterval;
 	bool hasAttacked;
 
+	[Header("AI States Variables")]
 	//States
 	public float sightRange, attackRange;
 	public bool CanSeePlayerInRange, CanAttackPlayerInRange;
