@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3623486215219598581}
   - component: {fileID: -5423303319489316762}
   m_Layer: 10
-  m_Name: Potato Man
+  m_Name: Potato
   m_TagString: Bean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.72, z: -9.02}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
-  - {fileID: 3623486216140949760}
+  - {fileID: 4297687696487342627}
   - {fileID: 3623486215555653415}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   PotatoShooter: {fileID: 3623486215595832931}
   controller: {fileID: 3623486215219598581}
-  Potato: {fileID: 8160006949475439202, guid: e0947d58fc87ea842bf768746b362004, type: 3}
+  Potato: {fileID: 3062717675523516729, guid: 9114e69d71b5ada468faa452062ef755, type: 3}
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
@@ -116,10 +116,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
+  m_Radius: 1
+  m_Height: 2.8
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0.06, y: 0.2, z: 0}
 --- !u!1 &3623486215555653414
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +147,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3623486215555653414}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.648, y: 0, z: 0.289}
+  m_LocalPosition: {x: -0.648, y: 0, z: 0.8706256}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3623486215595832940}
@@ -245,97 +245,98 @@ Transform:
   m_Father: {fileID: 3623486215555653415}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3623486216140949767
-GameObject:
+--- !u!1001 &4336629225660122568
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3623486216140949760}
-  - component: {fileID: 3623486216140949763}
-  - component: {fileID: 3623486216140949762}
-  - component: {fileID: 3623486216140949761}
-  m_Layer: 10
-  m_Name: Potato
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3623486216140949760
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3623486215219598580}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07903335
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.27644914
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.66765726
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7444688
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 83.773
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 827b2f00ec5a2a24f88b19ee12e1b087, type: 2}
+    - target: {fileID: 919132149155446097, guid: d46df5300147e104aa42a4252d50cf59,
+        type: 3}
+      propertyPath: m_Name
+      value: Potato (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d46df5300147e104aa42a4252d50cf59, type: 3}
+--- !u!4 &4297687696487342627 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d46df5300147e104aa42a4252d50cf59,
+    type: 3}
+  m_PrefabInstance: {fileID: 4336629225660122568}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3623486216140949767}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3623486215219598580}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3623486216140949763
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3623486216140949767}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &3623486216140949762
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3623486216140949767}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!136 &3623486216140949761
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3623486216140949767}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
