@@ -5,19 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Menus/MainMenu.unity
+    guid: c9b595be04be1e3beb35dfad633fbbb7
+  - enabled: 0
+    path: Assets/Scenes/Menus/CreditsScene.unity
+    guid: f08dc241afd9f0429931be13b0407c99
+  - enabled: 0
+    path: Assets/Scenes/Menus/Victory.unity
+    guid: 3981d34f4bc6db6cab9cf6182ec6aa9a
+  - enabled: 0
+    path: Assets/Scenes/Menus/GameOver.unity
+    guid: 672f20fda788a0b47883d612563ce7d6
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 8c310613c6dfd23439c298019a936c75
+    path: Assets/Scenes/Maps/Story.unity
+    guid: 648a710fc38f20841be911bcdd91f939
   - enabled: 1
-    path: Assets/Scenes/CreditsScene.unity
-    guid: 7bf6c33eefdd8924f9f9adf708d75fd0
+    path: Assets/Scenes/Maps/Pile.unity
+    guid: 5a344e171483fdd3bacff3fa1ec0ab6e
   - enabled: 1
-    path: Assets/Scenes/PlayerScene.unity
-    guid: 049ad8be9fa190ee8ab13fd8d9db5eb3
+    path: Assets/Scenes/Maps/Bridges.unity
+    guid: f6ea7be5fcceedd318d886aab3f2bb23
   - enabled: 1
-    path: Assets/Scenes/Endless.unity
-    guid: 2becd46591f0b02408ce371c45cde7bf
+    path: Assets/Scenes/Maps/Endless.unity
+    guid: 761bba72ad25cf2bd9b25f9a88392f8e
   - enabled: 1
-    path: Assets/Scenes/Victory.unity
-    guid: 7c9fb6b9670695046a9431c6a752563c
+    path: Assets/Scenes/Maps/Pile (copie).unity
+    guid: 19ce792d1a1b1d9b89fbca73bcb5f281
+  - enabled: 1
+    path: Assets/Scenes/Maps/Bridges (copie).unity
+    guid: 74db198b80a2d7289a2a6ebb8ae09d7e
   m_configObjects: {}

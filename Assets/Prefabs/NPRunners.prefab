@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: -3315640311090174387}
   - component: {fileID: -2013996243471444602}
   - component: {fileID: 7468474330306460309}
+  - component: {fileID: 6462562141756518469}
   m_Layer: 10
   m_Name: NPRunners
   m_TagString: Bean
@@ -207,6 +208,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e93a521181d51c49a9fc54eadc28fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatermelonSound: {fileID: 0}
+  PeanutSound: {fileID: 0}
+--- !u!114 &6462562141756518469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5138247610343100746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e19df5beeb3dfa6be155524d65c474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ragdoll: {fileID: 5138247610343100746, guid: f63fe40bbb0027010ba7e753a03721fb, type: 3}
 --- !u!1001 &1050759226121417432
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6936845901060228061}
   m_Layer: 0
   m_Name: Tag
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e93a521181d51c49a9fc54eadc28fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatermelonSound: {fileID: 0}
+  PeanutSound: {fileID: 0}
 --- !u!65 &91181977784177898
 BoxCollider:
   m_ObjectHideFlags: 0

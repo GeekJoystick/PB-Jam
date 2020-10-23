@@ -377,6 +377,7 @@ MonoBehaviour:
   seed: {fileID: 1891317970743260147, guid: 9e6a4e3d8d0735a4aac7286ca1bec015, type: 3}
   hasAttacked: 0
   AttackInterval: 3
+  Sound: {fileID: 0}
 --- !u!1 &8521405571960595881
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,9 +510,10 @@ GameObject:
   - component: {fileID: 8521405572774894142}
   - component: {fileID: 8521405572774894143}
   - component: {fileID: 767006081767437884}
+  - component: {fileID: 2794116523076815349}
   m_Layer: 10
   m_Name: WaterMelonHandler
-  m_TagString: Bean
+  m_TagString: WaterMelon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -565,6 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e93a521181d51c49a9fc54eadc28fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatermelonSound: {fileID: 0}
+  PeanutSound: {fileID: 0}
 --- !u!135 &767006081767437884
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -578,6 +582,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2794116523076815349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8521405572774894083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e19df5beeb3dfa6be155524d65c474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ragdoll: {fileID: 8521405572774894083, guid: 090f79b6f6b37ff24ab1427d1fb8f363, type: 3}
 --- !u!1 &8521405572823150961
 GameObject:
   m_ObjectHideFlags: 0

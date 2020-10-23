@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 3623486215219598570}
   - component: {fileID: 3623486215219598581}
   - component: {fileID: -5423303319489316762}
+  - component: {fileID: 5224409083522421804}
   m_Layer: 10
   m_Name: Potato
-  m_TagString: Bean
+  m_TagString: Potato
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,6 +89,7 @@ MonoBehaviour:
   attackRange: 35
   CanSeePlayerInRange: 0
   CanAttackPlayerInRange: 0
+  Sound: {fileID: 0}
 --- !u!143 &3623486215219598581
 CharacterController:
   m_ObjectHideFlags: 0
@@ -120,6 +122,19 @@ CapsuleCollider:
   m_Height: 2.8
   m_Direction: 1
   m_Center: {x: 0.06, y: 0.2, z: 0}
+--- !u!114 &5224409083522421804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3623486215219598569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7e19df5beeb3dfa6be155524d65c474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ragdoll: {fileID: 0}
 --- !u!1 &3623486215555653414
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +146,6 @@ GameObject:
   - component: {fileID: 3623486215555653415}
   - component: {fileID: 3623486215555653410}
   - component: {fileID: 3623486215555653409}
-  - component: {fileID: 3623486215555653408}
   m_Layer: 10
   m_Name: Cylinder
   m_TagString: Untagged
@@ -201,20 +215,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3623486215555653408
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3623486215555653414}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &3623486215595832931
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7755142944595742601}
   m_Layer: 10
   m_Name: BigPeanut
-  m_TagString: Peanut
+  m_TagString: BigPeanut
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,8 +88,6 @@ MonoBehaviour:
   CanRunAwayInRange: 0
   Player: {fileID: 0}
   controller: {fileID: 0}
-  RandomZ: 0
-  RandomX: 0
   peanut: {fileID: 4621135530919958768, guid: c416d170943e89068ad0a8233116e896, type: 3}
 --- !u!143 &3251589106066744362
 CharacterController:
@@ -121,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e93a521181d51c49a9fc54eadc28fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WatermelonSound: {fileID: 0}
+  PeanutSound: {fileID: 0}
 --- !u!136 &7755142944595742601
 CapsuleCollider:
   m_ObjectHideFlags: 0
