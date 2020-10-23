@@ -28,12 +28,12 @@ public class Potato : MonoBehaviour
 			{
 				spawner.time = spawner.maxTime;
 			}
-			spawner.score += 100;
 			Food food = collision.gameObject.GetComponent<Food>();
 			if (food != null)
 			{
 				food.Die();
 			}
+			spawner.score += 100;
 			Destroy(gameObject);
 			Destroy(collision.gameObject);
 		}
@@ -50,7 +50,6 @@ public class Potato : MonoBehaviour
 			spawner.score += 250;
 			spawner.AddObject(Instantiate(peanut, collision.gameObject.transform.position, collision.gameObject.transform.localRotation));
 			spawner.AddObject(Instantiate(peanut, collision.gameObject.transform.position, collision.gameObject.transform.localRotation));
-			collision.gameObject.GetComponent<Food>().Die();
 			Destroy(gameObject);
 			Destroy(collision.gameObject);
 
@@ -69,7 +68,11 @@ public class Potato : MonoBehaviour
 				spawner.time = spawner.maxTime;
 			}
 			spawner.score += 500;
-			collision.gameObject.GetComponent<Food>().Die();
+			Food food = collision.gameObject.GetComponent<Food>();
+			if (food != null)
+			{
+				food.Die();
+			}
 			Destroy(gameObject);
 			Destroy(collision.gameObject);
 			if (!WatermelonSound.isPlaying)
@@ -87,7 +90,11 @@ public class Potato : MonoBehaviour
 				spawner.time = spawner.maxTime;
 			}
 			spawner.score += 125;
-			collision.gameObject.GetComponent<Food>().Die();
+			Food food = collision.gameObject.GetComponent<Food>();
+			if (food != null)
+			{
+				food.Die();
+			}
 			Destroy(gameObject);
 			Destroy(collision.gameObject);
 			if (!PeanutSound.isPlaying)
@@ -107,6 +114,11 @@ public class Potato : MonoBehaviour
 					spawner.time = spawner.maxTime;
 				}
 				spawner.score += 200;
+				Food food = collision.gameObject.GetComponent<Food>();
+			if (food != null)
+			{
+				food.Die();
+			}
 				Destroy(gameObject);
 				Destroy(collision.gameObject);
 			}

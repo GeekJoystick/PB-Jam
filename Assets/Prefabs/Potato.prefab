@@ -89,7 +89,7 @@ MonoBehaviour:
   attackRange: 35
   CanSeePlayerInRange: 0
   CanAttackPlayerInRange: 0
-  Sound: {fileID: 0}
+  PotatoPop: {fileID: 0}
 --- !u!143 &3623486215219598581
 CharacterController:
   m_ObjectHideFlags: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e19df5beeb3dfa6be155524d65c474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ragdoll: {fileID: 0}
+  ragdoll: {fileID: 3623486215219598569, guid: c0a30087f6a97f8fbb6d89e31887e321, type: 3}
 --- !u!1 &3623486215555653414
 GameObject:
   m_ObjectHideFlags: 0
