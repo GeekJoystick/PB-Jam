@@ -477,7 +477,7 @@ MonoBehaviour:
   ammoReloadDelay: 0.1
   groundCheck: {fileID: 522144486518090769}
   shootPos: {fileID: 522144485348463329}
-  potato: {fileID: 8160006949475439202, guid: e0947d58fc87ea842bf768746b362004, type: 3}
+  potato: {fileID: 5950838577701353786, guid: 4a2928d3b248e0744b9eb131d4ad0d4e, type: 3}
   groundMask:
     serializedVersion: 2
     m_Bits: 256
